@@ -1,0 +1,59 @@
+{
+  "name": "twilio-pbx",
+  "description": "A Virtual PBX Server for Twilio",
+  "homepage": "https://github.com/jmkim/twilio-pbx.git",
+  "author": "Jongmin Kim <jmkim@jongmin.dev>",
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "bin/twilio-pbx",
+  "engines": {
+    "node": "16"
+  },
+  "scripts": {
+    "deploy": "firebase deploy --only functions",
+    "lint": "eslint .",
+    "logs": "firebase functions:log",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "node bin/twilio-pbx"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.18.2",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.1.0",
+    "got": "^11.8.5",
+    "hbs": "^4.2.0",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "twilio": "^3.83.4"
+  },
+  "keywords": [
+    "twilio",
+    "pbx",
+    "sms",
+    "call",
+    "email",
+    "call forwarding",
+    "phone",
+    "server"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmkim/twilio-pbx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmkim/twilio-pbx/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.29.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.8.0",
+    "firebase-functions-test": "^0.2.0"
+  }
+}
