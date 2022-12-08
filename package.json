@@ -1,11 +1,11 @@
 {
   "name": "twilio-pbx",
-  "description": "A Virtual PBX Server for Twilio",
+  "description": "A Virtual PBX Server for Twilio (Supports standalone Node.js server and Firebase Cloud Functions)",
   "homepage": "https://github.com/jmkim/twilio-pbx.git",
   "author": "Jongmin Kim <jmkim@jongmin.dev>",
   "license": "MIT",
   "version": "1.0.0",
-  "main": "bin/twilio-pbx",
+  "main": "app-firebase.js",
   "engines": {
     "node": "16"
   },
@@ -17,6 +17,20 @@
     "shell": "firebase functions:shell",
     "start": "node bin/twilio-pbx"
   },
+  "files": [
+    ".env.template",
+    ".eslintrc.json",
+    "app.js",
+    "app-firebase.js",
+    "README.md",
+    "firebase.json",
+    "package.json",
+    "bin",
+    "public",
+    "routes",
+    "utils",
+    "views"
+  ],
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -38,7 +52,9 @@
     "email",
     "call forwarding",
     "phone",
-    "server"
+    "server",
+    "firebase",
+    "firebase functions"
   ],
   "repository": {
     "type": "git",

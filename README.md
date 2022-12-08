@@ -1,5 +1,71 @@
 # twilio-pbx: A Virtual PBX Server for Twilio
 
+## Deployment
+
+twilio-pbx supports two ways for deployment: one is **Node.js Standalone server** and another is **Firebase Cloud Functions**.
+
+### Option 1: Node.js Standalone server
+
+1. Install npm dependencies
+
+    ```bash
+    npm install
+    ```
+
+2. Copy the `.env` file from `.env.template`
+
+    ```bash
+    cp .env.template .env
+    ```
+
+3. Edit the `.env` file
+4. Run the server
+
+    ```bash
+    npm run start
+    ```
+
+### Option 2: Firebase Cloud Functions
+
+1. Make ready the Firebase Cloud Functions
+    * Create the project at [firebase.google.com](http://firebase.google.com).
+    * Make sure the billing is activated, which is required by the Firebase Cloud Functions.
+      * Note: Firebase Cloud Functions is only available with paid account. It does not offer the free trial.
+    * Install and login to Firebase
+
+        ```bash
+        npm install -g firebase-tools # Globally install the Firebase CLI Tools
+        firebase login                # Login
+        ```
+
+2. Copy the `.firebaserc` file from `.firebaserc.template`
+
+    ```bash
+    cp .firebaserc.template .firebaserc
+    ```
+
+3. Set the actual project name in `.firebaserc`
+    * Replace `FIREBASE_PROJECT_NAME_HERE` with the actual project name
+
+4. Copy the `.env` file from `.env.template`
+
+    ```bash
+    cp .env.template .env
+    ```
+
+5. Edit the `.env` file
+6. Emulate the server in local machine
+
+    ```bash
+    npm run serve
+    ```
+
+7. Deploy the server to the Firebase Cloud Functions
+
+    ```bash
+    npm run deploy
+    ```
+
 ## Environmental variables
 
 Environmental variables could be stored in `.env` file in the root directory.
