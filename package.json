@@ -4,7 +4,7 @@
   "homepage": "https://github.com/jmkim/twilio-pbx.git",
   "author": "Jongmin Kim <jmkim@jongmin.dev>",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "app-firebase.js",
   "engines": {
     "node": "16"
