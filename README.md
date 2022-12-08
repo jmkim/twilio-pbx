@@ -71,6 +71,14 @@ twilio-pbx supports two ways for deployment: one is **Node.js Standalone server*
 Environmental variables could be stored in `.env` file in the root directory.
 The example template is located at `.env.template`.
 
+* `TWILIO_PBX_URI_BASE`
+  * Base URI to bind and run the Twilio PBX server
+  * It must include the trailing `/`.
+  * format: `string`
+  * example:
+    * `/` if deployed on local
+    * `https://FIREBASE_PRJ_ID.cloudfunctions.net/pbx/` if deployed on Firebase Cloud Functions
+    * Again, do not forget the trailing `/`.
 * `TWILIO_PBX_PORT`
   * Port number to bind and run the Twilio PBX server
   * format: `int`

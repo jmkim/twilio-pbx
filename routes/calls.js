@@ -6,6 +6,7 @@ const twilio = require('twilio')
 const strUtils = require('../utils/string')
 const twilioUtils = require('../utils/twilio')
 const logging = require('../utils/logging')
+const uriBase = process.env.TWILIO_PBX_URI_BASE
 const sendgridApiKey = process.env.SENDGRID_API_KEY
 const sendgridApiPath = process.env.SENDGRID_API_PATH
 const accountSid = process.env.TWILIO_ACCOUNT_SID
@@ -123,9 +124,9 @@ router.post('/', (req, res) => {
   const exchanger = new twilio.twiml.VoiceResponse()
 
   if (strUtils.strToArray(process.env.CALL_COMMAND_PHONE_NUMBER).includes(fromNumber)) {
-    exchanger.redirect({ method: 'POST' }, '/calls/command')
+    exchanger.redirect({ method: 'POST' }, uriBase + 'calls/command')
   } else {
-    exchanger.redirect({ method: 'POST' }, '/calls/forward')
+    exchanger.redirect({ method: 'POST' }, uriBase + 'calls/forward')
   }
 
   res.set('Content-Type', 'text/xml')
@@ -145,7 +146,7 @@ router.post('/command', (req, res) => {
 
   logging.log('call:command', 'WAIT', 'msg: wait for dialer')
   const gather = commander.gather({
-    action: '/calls/dial',
+    action: uriBase + 'calls/dial',
     method: 'POST',
     input: 'dtmf',
     finishOnKey: '#',
@@ -172,7 +173,7 @@ router.post('/dial', (req, res) => {
   const dialer = new twilio.twiml.VoiceResponse()
 
   dialer.dial({
-    action: '/calls/dial/result',
+    action: uriBase + 'calls/dial/result',
     method: 'POST',
     callerId: fromNumber,
     timeout: process.env.CALL_RECEIVE_TIMEOUT
@@ -244,7 +245,7 @@ router.post('/forward', async (req, res) => {
   const forwarder = new twilio.twiml.VoiceResponse()
 
   forwarder.dial({
-    action: '/calls/forward/result',
+    action: uriBase + 'calls/forward/result',
     method: 'POST',
     callerId: fromNumber,
     answerOnBridge: true,
