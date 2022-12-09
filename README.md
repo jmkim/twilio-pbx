@@ -132,12 +132,12 @@ The example template is located at `.env.template`.
   * example: `+821000337890`
   * notes:
     * Twilio blocks the message outbound to US for non-US Twilio numbers.
-    * If you set US number here for non-US Twilio number, you cannot receive the Call Alert message.
+    * If you set the US number here for non-US Twilio number, you cannot receive the Call Alert message.
 * `CALL_RECEIVE_TIMEOUT`
   * Timeout for waiting the destination phone response in the Call Forwarding mode
   * format: `int` - positive integer, in seconds
 * `CALL_SHOW_CARRIER`
-  * Flag for include the carrier informations in the Call Alert
+  * Flag for include the carrier information in the Call Alert
   * format: `int` - `0` or `1`
   * notes:
     * It uses Twilio Lookup API - Carrier
@@ -173,8 +173,8 @@ The example template is located at `.env.template`.
   * example: `+12120007890,+821000337890`
   * notes:
     * Twilio blocks the message outbound to US for non-US Twilio numbers.
-    * If you set US number here for non-US Twilio number, you cannot receive the command response.
-    * If you send to US number from non-US Twilio number, it will be undelivered sliently.
+    * If you set the US number here for non-US Twilio number, you cannot receive the command response.
+    * If you send to the US number from non-US Twilio number, it will be undelivered silently.
 * `TEXT_RECEIVE_US_PHONE_NUMBER`
   * Destination phone number for US Twilio number Text Forwarding mode
   * format: `string` - E.164 formatted phone number
@@ -185,4 +185,4 @@ The example template is located at `.env.template`.
   * example: `+821000337890`
   * notes:
     * Twilio blocks the message outbound to US for non-US Twilio numbers.
-    * If you set US number here for non-US Twilio number, you cannot receive the Text Alert message.
+    * If you set the US number here for non-US Twilio number, you cannot receive the Text Alert message.
