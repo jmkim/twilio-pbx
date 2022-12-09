@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
 const rootRouter = require('./routes/__root__')
-const dumpsRouter = require('./routes/dumps')
 const callsRouter = require('./routes/calls')
 const textsRouter = require('./routes/texts')
 
@@ -22,7 +21,6 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', rootRouter)
-app.use('/dumps', dumpsRouter)
 app.use('/calls', callsRouter)
 app.use('/texts', textsRouter)
 
