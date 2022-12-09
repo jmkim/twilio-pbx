@@ -77,7 +77,7 @@ The example template is located at `.env.template`.
   * format: `string`
   * example:
     * `/` if deployed on local
-    * `https://FIREBASE_PRJ_ID.cloudfunctions.net/pbx/` if deployed on Firebase Cloud Functions
+    * `/pbx/` if deployed on Firebase Cloud Functions
     * Again, do not forget the trailing `/`.
 * `TWILIO_PBX_PORT`
   * Port number to bind and run the Twilio PBX server
