@@ -5,7 +5,9 @@ A Virtual PBX Server for [Twilio](https://www.twilio.com). Supports [standalone 
 1. [How to use](#how-to-use)
    1. [Call modes](#call-modes)
    2. [Text modes](#text-modes)
-2. [Deployment](#deployment)
+2. [How to install](#how-to-install)
+   1. [Node.js Standalone server](#option-1-nodejs-standalone-server)
+   2. [Firebase Cloud Functions](#option-2-firebase-cloud-functions)
 3. [APIs](#apis)
 4. [Environmental variables](#environmental-variables)
 
@@ -146,7 +148,7 @@ A Virtual PBX Server for [Twilio](https://www.twilio.com). Supports [standalone 
     Happy holiday o/
     ```
 
-## Deployment
+## How to install
 
 twilio-pbx supports two ways for deployment: one is **[Node.js Standalone server](#option-1-nodejs-standalone-server)** and another is **[Firebase Cloud Functions](#option-2-firebase-cloud-functions)**.
 
