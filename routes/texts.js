@@ -24,7 +24,7 @@ async function mailInboundText (fromNumber, toNumber, body) {
   const fromEmailAddress = fromEmail.address
   logging.log('text:mail', 'READY', `from: ${fromEmailAddress}, to: ${toEmailAddress}`)
 
-  const title = `Message from: ${fromNumber}`
+  const title = `New message: ${fromNumber}`
 
   const requestBody = {
     personalizations: [{
